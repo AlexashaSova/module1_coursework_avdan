@@ -1,5 +1,24 @@
-#Coursework project 
-##on the module 1 "The Datascientist's Toolbox" 
-###**done by Alexandra Avdan**
-####*July 2023*
+---
+editor_options:
+  markdown:
+    wrap: 72
+output:
+  html_document:
+    df_print: paged
+---
 
+# Coursework project
+
+## on the module 1 "The Datascientist's Toolbox"
+
+### **done by Alexandra Avdan**
+
+#### *July 2023*
+
+------------------------------------------------------------------------
+
+> This project is available in the public repository on GitHub. You can
+> check it following this
+> [**link**](https://github.com/AlexashaSova/module1_coursework_avdan.git).
+
+------------------------------------------------------------------------
