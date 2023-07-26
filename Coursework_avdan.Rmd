@@ -28,7 +28,7 @@ of the datasets from the pre-installed R package 'datasets'. The full
 list of the packages, available at the named package is available in the
 [**link to the R
 documentation**](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html).
-From the named library I've decided to pick 2 datasets by my own
+From the named library I've decided to pick 3 datasets by my own
 preferences to analyze data each of selected datasets contains.
 
 > Respecting to the fact, that our knowledge is not deep enough to build
@@ -39,9 +39,9 @@ preferences to analyze data each of selected datasets contains.
 
 -   The first dataset is pretty classical dataset for this subject area,
     **'iris'**. This dataset represents measurements of *sepal length,
-    sepal width, petal length and petal width* the three iris species: *setosa*,
-    *virginica* and *versicolor*. There are 50 rows per each of the iris
-    species in the dataset.
+    sepal width, petal length and petal width* the three iris species:
+    *setosa*, *virginica* and *versicolor*. There are 50 rows per each
+    of the iris species in the dataset.
 
 ```{r}
 # get the data of the whole dataset
@@ -138,11 +138,18 @@ comments and observation are the same, as for the previous one.
 plot(setosa)
 ```
 
-To reveal the dependencies between the metrics of the dataset, we have to build a more detailed visualization.
-To reveal the relationships between *petal length* and *petal width* let's build a graph. **All the dataset *iris* will be analyzed**
-From the obtained visualization it is clear, that in most cases increasing of petal length is connected with the increasing of petal width and vice versa.
-The other fact is that there is no petal width and length values in the interval from 2 to 3 including these values. 
-There is also one more interesting detail: there is a cluster in the lower left corner. This cluster may contain data on the miniature size irises. That may be small ones on any of the represented types or just small type (that may be *setosa*, *versicolor* or *virginica* with equal probabilities). 
+To reveal the dependencies between the metrics of the dataset, we have
+to build a more detailed visualization. To reveal the relationships
+between *petal length* and *petal width* let's build a graph. **All the
+dataset *iris* will be analyzed** From the obtained visualization it is
+clear, that in most cases increasing of petal length is connected with
+the increasing of petal width and vice versa. The other fact is that
+there is no petal width and length values in the interval from 2 to 3
+including these values. There is also one more interesting detail: there
+is a cluster in the lower left corner. This cluster may contain data on
+the miniature size irises. That may be small ones on any of the
+represented types or just small type (that may be *setosa*, *versicolor*
+or *virginica* with equal probabilities).
 
 ```{r}
 plot(iris$petal.length, iris$petal.width)
@@ -152,21 +159,31 @@ More investigations can be made with the formulated question to solve.
 
 ------------------------------------------------------------------------
 
--   The second dataset is
+-   The second dataset is **'airmiles'**. This dataset is represented by
+    the time series of values of flown passenger miles by the USA
+    commercial airlines from 1937 to 1960.
+
+It is important to highlight, that **iris** dataset is represented by
+the *Data*, when **airmiles** and other dataset, that will be considered
+later, **AirPassengers**, are represented by the *values of
+time-series*:
+
+![](images/airmiles_dataset.jpg)
+
+Let's visualize dataset **'airmiles'**.
 
 ```{r}
 library(datasets)
-data("airmiles")
 plot(airmiles)
-
 ```
 
+-   The third dataset is **'AirPassengers'**. This dataset, as it was
+    recently mentioned,
+
 ```{r}
 library(datasets)
-data("AirPassengers")
 plot(AirPassengers)
 ```
-
 
 During this work I've been doing commits on the linked GitHub
 repository. Here is commit history as an evidence of proper work:
