@@ -39,12 +39,13 @@ preferences to analyze data each of selected datasets contains.
 
 -   The first dataset is pretty classical dataset for this subject area,
     **'iris'**. This dataset represents measurements of *sepal length,
-    sepal width and peatl width* the three iris species: *setosa*,
+    sepal width, petal length and petal width* the three iris species: *setosa*,
     *virginica* and *versicolor*. There are 50 rows per each of the iris
     species in the dataset.
 
 ```{r}
-# get the data of the whole dataset 
+# get the data of the whole dataset
+library(datasets)
 data("iris")
 ```
 
@@ -53,16 +54,34 @@ ordered by the index at the ascending order.
 
 ![](images/iris_dataset.jpg)
 
-The next step is to obtain summary on the dataset. The following summary
-contains values on the criteria, such as *minimum (Min.)*, *1st Quartile
-(1st Qu.)* (i.e. 25% of data was taken under the produced value),
-*Median* (can be named as a middle value of some numeric sequence),
-*Mean* (average value), *3rd Quartile (3rd Qu.)* (i.e. 75% of data was
-taken under the produced value), *maximum (Max.)* for numeric values and
-number of occurencies of each value for string values (column
-*'Species'* in *iris* dataset). Additionally, the range value can be
-calculated if needed. However, without any certain question, needed to
-be solved, these values are useless.
+The next step is to obtain summary on the dataset.
+
+The following summary contains values on the criteria, such as
+
+-   *minimum (Min.)*,
+
+-   *1st Quartile (1st Qu.)* (i.e. 25% of data was taken under the
+    produced value),
+
+-   *Median* (can be named as a middle value of some numeric sequence),
+
+-   *Mean* (average value),
+
+-   *3rd Quartile (3rd Qu.)* (i.e. 75% of data was taken under the
+    produced value),
+
+-   *maximum (Max.)*
+
+    for numeric values and
+
+-   *number of occurencies* of each value
+
+    for string values (column *'Species'* in *iris* dataset).
+
+Additionally, the range value can be calculated if needed. However,
+without any certain question, needed to be solved, these values are
+useless. According to the dataset data, this dataset has no missing
+values (no NaN or NULLs).
 
 ```{r}
 summary(iris)
@@ -85,20 +104,58 @@ setosa <- filter(iris, species == "setosa")
 head(setosa)
 ```
 
-The next step is obtaining summary metrics on the measurements of different *setosa* flowers. 
-According to the data of the column *'species'* there are no other data here, except of *setosa* data. The obtained metrics' data also differ from the previously obtained.
+The next step is obtaining summary metrics on the measurements of
+different *setosa* flowers. According to the data of the column
+*'species'* there are no other data here, except of *setosa* data. The
+obtained metrics' data also differ from the previously obtained.
 
 ```{r}
 summary(setosa)
 ```
 
+The final step is creating visualizations. Note, that there was no
+particular aim, set as a goal of investigations. The first visualization
+is done on the whole *iris* dataset. From the visualization below some
+conclusions could be made:
 
+-   it was a bad practice to visualize the whole dataset, that contains
+    both numeric and string values. The obtained row and column
+    'species' is not pretty informative;
+-   it is useful to assess the whole picture of the dataset, but for
+    more accurate conclusions and results, more detailed visualizations
+    have to be made.
+
+```{r}
+plot(iris)
+```
+
+Let's create a visualization of the created *setosa* data **only**
+dataframe. The obtained visualization allows to make conclusions and
+analysis on the certain type of iris flowers *setosa*. For this graph
+comments and observation are the same, as for the previous one.
+
+```{r}
+plot(setosa)
+```
+
+To reveal the dependencies between the metrics of the dataset, we have to build a more detailed visualization.
+To reveal the relationships between *petal length* and *petal width* let's build a graph. **All the dataset *iris* will be analyzed**
+From the obtained visualization it is clear, that in most cases increasing of petal length is connected with the increasing of petal width and vice versa.
+The other fact is that there is no petal width and length values in the interval from 2 to 3 including these values. 
+There is also one more interesting detail: there is a cluster in the lower left corner. This cluster may contain data on the miniature size irises. That may be small ones on any of the represented types or just small type (that may be *setosa*, *versicolor* or *virginica* with equal probabilities). 
+
+```{r}
+plot(iris$petal.length, iris$petal.width)
+```
+
+More investigations can be made with the formulated question to solve.
 
 ------------------------------------------------------------------------
 
 -   The second dataset is
 
 ```{r}
+library(datasets)
 data("airmiles")
 plot(airmiles)
 
@@ -107,13 +164,11 @@ plot(airmiles)
 ```{r}
 library(datasets)
 data("AirPassengers")
-#summary(iris)
-```
-
-```{r}
 plot(AirPassengers)
 ```
 
-```{r}
-plot(iris)
-```
+
+During this work I've been doing commits on the linked GitHub
+repository. Here is commit history as an evidence of proper work:
+
+![]()
