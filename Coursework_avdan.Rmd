@@ -22,3 +22,98 @@ output:
 > [**link**](https://github.com/AlexashaSova/module1_coursework_avdan.git).
 
 ------------------------------------------------------------------------
+
+The first step of this project is to load and analyze into account some
+of the datasets from the pre-installed R package 'datasets'. The full
+list of the packages, available at the named package is available in the
+[**link to the R
+documentation**](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html).
+From the named library I've decided to pick 2 datasets by my own
+preferences to analyze data each of selected datasets contains.
+
+> Respecting to the fact, that our knowledge is not deep enough to build
+> complex analysis, in my work is represented only brief look on each of
+> data, within the basics of the descriptive analysis with the elements
+> of exploratory approach in order to find some possible dependencies on
+> the given data.
+
+-   The first dataset is pretty classical dataset for this subject area,
+    **'iris'**. This dataset represents measurements of *sepal length,
+    sepal width and peatl width* the three iris species: *setosa*,
+    *virginica* and *versicolor*. There are 50 rows per each of the iris
+    species in the dataset.
+
+```{r}
+# get the data of the whole dataset 
+data("iris")
+```
+
+On the image below is represented top 12 rows of the iris dataset rows,
+ordered by the index at the ascending order.
+
+![](images/iris_dataset.jpg)
+
+The next step is to obtain summary on the dataset. The following summary
+contains values on the criteria, such as *minimum (Min.)*, *1st Quartile
+(1st Qu.)* (i.e. 25% of data was taken under the produced value),
+*Median* (can be named as a middle value of some numeric sequence),
+*Mean* (average value), *3rd Quartile (3rd Qu.)* (i.e. 75% of data was
+taken under the produced value), *maximum (Max.)* for numeric values and
+number of occurencies of each value for string values (column
+*'Species'* in *iris* dataset). Additionally, the range value can be
+calculated if needed. However, without any certain question, needed to
+be solved, these values are useless.
+
+```{r}
+summary(iris)
+```
+
+From the data below it is clear that all the metrics are calculated on
+all the iris species. It would be more informative, if the metrics were
+calculated on the certain needed iris type. Assume, we need to get some
+metrics on the iris *setosa*. Let's create dataframe with *setosa*
+values **only**.
+
+```{r}
+# attaching library dplyr to use filter() function
+library(dplyr)
+# to make it more usable to call the names of the columns making it to lowercase 
+names(iris) <- tolower(names(iris))
+# creating dataframe with setosa rows only
+setosa <- filter(iris, species == "setosa")
+# show top-6 values of the obtained dataframe ordered by the ascending of the index
+head(setosa)
+```
+
+The next step is obtaining summary metrics on the measurements of different *setosa* flowers. 
+According to the data of the column *'species'* there are no other data here, except of *setosa* data. The obtained metrics' data also differ from the previously obtained.
+
+```{r}
+summary(setosa)
+```
+
+
+
+------------------------------------------------------------------------
+
+-   The second dataset is
+
+```{r}
+data("airmiles")
+plot(airmiles)
+
+```
+
+```{r}
+library(datasets)
+data("AirPassengers")
+#summary(iris)
+```
+
+```{r}
+plot(AirPassengers)
+```
+
+```{r}
+plot(iris)
+```
