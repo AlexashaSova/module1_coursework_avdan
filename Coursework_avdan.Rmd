@@ -171,6 +171,7 @@ time-series*:
 ![](images/airmiles_dataset.jpg)
 
 Let's visualize dataset **'airmiles'**.
+From the obtained visualization can be made a conclusion, that with the time number of airmiles flown is increasing. This characteristic increases particularly rapidly from 1947 to 1957. This decade was probably characterised by the technical progress and popularization of air transport.
 
 ```{r}
 library(datasets)
@@ -178,8 +179,8 @@ plot(airmiles)
 ```
 
 -   The third dataset is **'AirPassengers'**. This dataset, as it was
-    recently mentioned,
-
+    recently mentioned, is represented by the time-series.
+    
 ```{r}
 library(datasets)
 plot(AirPassengers)
