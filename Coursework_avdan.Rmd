@@ -168,6 +168,7 @@ progress and popularization of air transport.
 
 ```{r}
 library(datasets)
+data('airmiles')
 plot(airmiles)
 ```
 
@@ -175,7 +176,7 @@ plot(airmiles)
 
 -   The third dataset is **'AirPassengers'**. This dataset, as it was
     recently mentioned, is represented by the time-series of values of
-    monthly totals of international airline passengers from 1949 to 1960. 
+    monthly totals of international airline passengers from 1949 to 1961. 
 
 Let's visualize dataset **'AirPassengers'**. From the obtained
 visualization it is clear, that it's a representation of the non-linear
@@ -187,6 +188,7 @@ number of air passengers increases.
 
 ```{r}
 library(datasets)
+data('AirPassengers')
 plot(AirPassengers)
 ```
 
