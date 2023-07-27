@@ -3,6 +3,7 @@ editor_options:
   markdown:
     wrap: 72
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -98,7 +99,7 @@ head(setosa)
 
 The next step is obtaining summary metrics on the measurements of
 different *setosa* irises. According to the data of the column
-*'species'* there are no other data here, except of *setosa* data. The
+*'species'* there are no other data here, except from *setosa* data. The
 obtained metrics' data also differ from the previously obtained.
 
 ```{r}
@@ -170,10 +171,11 @@ library(datasets)
 plot(airmiles)
 ```
 
+------------------------------------------------------------------------
+
 -   The third dataset is **'AirPassengers'**. This dataset, as it was
     recently mentioned, is represented by the time-series of values of
-    monthly totals of international airline passengers from 1949 to
-    1960. 
+    monthly totals of international airline passengers from 1949 to 1960. 
 
 Let's visualize dataset **'AirPassengers'**. From the obtained
 visualization it is clear, that it's a representation of the non-linear
@@ -188,7 +190,9 @@ library(datasets)
 plot(AirPassengers)
 ```
 
+------------------------------------------------------------------------
+
 During this work I've been doing commits on the [**linked GitHub repository.**](https://github.com/AlexashaSova/module1_coursework_avdan.git)
 Here is commit history as an evidence of proper work:
 
-![]()
+![](images/commits_history.jpg)
